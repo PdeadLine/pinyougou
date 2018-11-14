@@ -5,6 +5,7 @@ import com.pinyougou.pojo.TbSpecificationExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TbSpecificationMapper {
     int countByExample(TbSpecificationExample example);
@@ -20,6 +21,8 @@ public interface TbSpecificationMapper {
     List<TbSpecification> selectByExample(TbSpecificationExample example);
 
     TbSpecification selectByPrimaryKey(Long id);
+
+    List<Map> selectOptionList();
 
     int updateByExampleSelective(@Param("record") TbSpecification record, @Param("example") TbSpecificationExample example);
 

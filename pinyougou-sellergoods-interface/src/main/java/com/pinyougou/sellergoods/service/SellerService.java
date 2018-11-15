@@ -28,8 +28,14 @@ public interface SellerService {
 	 * 增加
 	*/
 	public void add(TbSeller seller);
-	
-	
+
+	/**
+	 * 更改状态
+	 * @param sellerId
+	 * @param status
+	 */
+	public void updateStatus(String sellerId, String status);
+
 	/**
 	 * 修改
 	 */

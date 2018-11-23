@@ -63,8 +63,8 @@ public class SellerServiceImpl implements SellerService {
 		TbSeller seller = sellerMapper.selectByPrimaryKey(sellerId);
 		seller.setStatus(status);
 		sellerMapper.updateByPrimaryKey(seller);
-
 	}
+
 
 
 	/**

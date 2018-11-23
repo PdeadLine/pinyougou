@@ -34,15 +34,27 @@ public interface GoodsService {
 	/**
 	 * 修改
 	 */
-	public void update(TbGoods goods);
-	
+	public void update(Goods goods);
 
+	/**
+	 * 审核商品
+	 * @param ids
+	 * @param status
+	 */
+	public void updateStatus(Long[] ids,String status);
+
+	/**
+	 * 上下架
+	 * @param id
+	 * @param status
+	 */
+	public void updateSaleStatus(String id, String status);
 	/**
 	 * 根据ID获取实体
 	 * @param id
 	 * @return
 	 */
-	public TbGoods findOne(Long id);
+	public Goods findOne(Long id);
 	
 	
 	/**

@@ -35,5 +35,6 @@
 	<dubbo:application name="pinyougou-manager-web" />
 	<dubbo:registry address="zookeeper://192.168.88.130:2181"/>
 	<dubbo:annotation package="com.pinyougou.manager.controller"/>
+	<dubbo:consumer timeout="5000"/>
 
 </beans>

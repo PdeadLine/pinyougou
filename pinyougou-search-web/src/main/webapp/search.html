@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="js/controller/searchController.js">  </script>
 	</head>
 
-	<body ng-app="pinyougou" ng-controller="searchController">
+	<body ng-app="pinyougou" ng-controller="searchController" ng-init="loadkeywords()">
 		<!-- 头部栏位 -->
 		<!--页面顶部-->
 		<div id="nav-bottom">
@@ -84,7 +84,6 @@
 											<button class="sui-btn btn-xlarge btn-danger" ng-click="searchMap.pageNo=1;search()" type="button">搜索</button>
 										</div>
 									</form>
-									{{resultMap.rows.length}}
 								</div>
 								<div class="hotwords">
 									<ul>
@@ -160,7 +159,8 @@
 				<div class="clearfix"></div>
 			</div>
 			{{searchMap}}###
-			{{pageLabel}}
+			{{pageLabel}}###
+			{{resultMap.}}
 			<!--selector-->
 			<div class="clearfix selector">
 				<div class="type-wrap" ng-if="resultMap.categoryList!=null && searchMap.category==''">

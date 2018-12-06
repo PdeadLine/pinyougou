@@ -174,6 +174,7 @@ public class GoodsServiceImpl implements GoodsService {
 		for (Long id : ids) {
 			TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
 			tbGoods.setAuditStatus(status);
+			// TODO: 18/12/06  更新sku状态
 			goodsMapper.updateByPrimaryKey(tbGoods);
 		}	
 	}
@@ -275,7 +276,8 @@ public class GoodsServiceImpl implements GoodsService {
 		com.pinyougou.pojo.TbItemExample.Criteria criteria = example.createCriteria();
 		criteria.andGoodsIdIn(Arrays.asList(goodsIds));
 		criteria.andStatusEqualTo(status);
-		return itemMapper.selectByExample(example);
+		List<TbItem> tbItemList = itemMapper.selectByExample(example);
+		return tbItemList;
 
 	}
 

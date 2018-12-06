@@ -19,7 +19,7 @@ import entity.Result;
 @RequestMapping("/itemCat")
 public class ItemCatController {
 
-	@Reference
+	@Reference(timeout = 5000)
 	private ItemCatService itemCatService;
 	
 	/**
@@ -101,7 +101,7 @@ public class ItemCatController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param itemCat
 	 * @param page
 	 * @param rows
 	 * @return

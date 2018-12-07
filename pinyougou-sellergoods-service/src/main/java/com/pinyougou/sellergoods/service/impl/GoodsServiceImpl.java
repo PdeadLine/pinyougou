@@ -174,8 +174,9 @@ public class GoodsServiceImpl implements GoodsService {
 		for (Long id : ids) {
 			TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
 			tbGoods.setAuditStatus(status);
-			// TODO: 18/12/06  更新sku状态
+			// TODO: 18/12/06  更新sku状态???
 			goodsMapper.updateByPrimaryKey(tbGoods);
+
 		}	
 	}
 
@@ -188,6 +189,16 @@ public class GoodsServiceImpl implements GoodsService {
 		TbGoods goods = goodsMapper.selectByPrimaryKey(Long.parseLong(id));
 		goods.setIsMarketable(status);
 		goodsMapper.updateByPrimaryKey(goods);
+
+		//更新sku状态！！！
+		TbItemExample example = new TbItemExample();
+		TbItemExample.Criteria criteria = example.createCriteria();
+		criteria.andGoodsIdEqualTo(Long.parseLong(id));
+		List<TbItem> tbItemlist = itemMapper.selectByExample(example);
+		for (TbItem tbItem : tbItemlist) {
+			tbItem.setStatus(status);
+			itemMapper.updateByPrimaryKey(tbItem);
+		}
 
 	}
 	

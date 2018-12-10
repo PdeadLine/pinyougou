@@ -15,4 +15,13 @@ public interface ItemPageService {
      * @return
      */
     public boolean genItemHtml(Long goodsId);
+
+    /**
+     * 删除生成的静态页面
+     * @param ids
+     * @return
+     */
+    public boolean deleteItemHtml(Long[] ids);
+
+
 }

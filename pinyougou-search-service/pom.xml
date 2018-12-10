@@ -81,6 +81,13 @@
         <artifactId>servlet-api</artifactId>
         <scope>provided</scope>
     </dependency>
+        <!--消息队列引入-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.13.4</version>
+        </dependency>
+
         <!--*****************项目间引用*****************-->
         <dependency>
             <groupId>com.pinyougou</groupId>
